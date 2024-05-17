@@ -19,8 +19,9 @@ const quizData = [
   
   function startQuiz() {
     startButton.disabled = true;
-    timerInterval = setInterval(updateTimer, 1000);
+   // timerInterval = setInterval(updateTimer, 1000);
     showQuestion();
+    document.getElementById("question").textContent = quizData [0].question
   }
   
   function showQuestion() {
@@ -42,9 +43,9 @@ const quizData = [
   }
   
   function checkAnswer(selectedAnswer) {
-    const currentQuestion = quizData[currentQuestionIndex];
-  
-    if (selectedAnswer === currentQuestion.correctAnswer) {
+    //const question = quizData[currentQuestionIndex];
+     selectedAnswer = 2
+    if (selectedAnswer === quizData[[0]].correctAnswer) {
       // Correct answer
       // Update score or perform other actions
     } else {
