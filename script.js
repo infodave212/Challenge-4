@@ -2,6 +2,8 @@
 const quizData = [
     { question: "What is JavaScript?", options: ["A programming language", "A type of coffee", "A country in Europe"], correctAnswer: "A programming language" },
     // Add more questions...
+    { question: "What is Html?", options: ["A programming language", "A type of red wine", "A country in USA"], correctAnswer: "A programming language" },
+    { question: "What is UTAustin?", options: ["A programming language", "A University", "A country in Europe"], correctAnswer: "A University" },
   ];
   
   let currentQuestionIndex = 0;
@@ -19,11 +21,15 @@ const quizData = [
   
   function startQuiz() {
     startButton.disabled = true;
-   // timerInterval = setInterval(updateTimer, 1000);
+    timerInterval = setInterval(updateTimer, 1000);
     showQuestion();
     document.getElementById("question").textContent = quizData [0].question
   }
-  
+  function updateTimer(){
+
+  }
+
+
   function showQuestion() {
     const questionContainer = document.getElementById("question");
     const optionsContainer = document.getElementById("options");
@@ -67,7 +73,7 @@ const quizData = [
   function endGame() {
     clearInterval(timerInterval);
     const timerDisplay = document.getElementById("time");
-    timerDisplay.textContent = timeLimit; // Display remaining time
+    timerDisplay.textContent = timeLimit--; // Display remaining time
     // Show initials input and submit button
     document.getElementById("initials").style.display = "inline";
     submitButton.style.display = "inline";
